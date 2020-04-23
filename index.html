@@ -8,23 +8,31 @@
       html {
         scroll-behavior: smooth;
       }
+      #navbarBasic {
+        transition-duration: .4s;
+      }
     </style>
     <title>Home | Cobalt Pig Development, LLC</title>
   </head>
   <body>
-    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+          <a class="navbar-item" href="#home">
             <img src="static/img/logo.png" />&nbsp;Cobalt Pig Development, LLC
           </a>
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasic">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasic" class="navbar-menu">
           <div class="navbar-end">
             <a class="navbar-item" href="#about">
               <i class="fas fa-question"></i>&nbsp;About
@@ -42,11 +50,11 @@
         </div>
       </div>
     </nav>
-    <section class="hero is-large is-info">
+    <section class="hero is-large is-info" id="home">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            Cobalt Pig Development, LLC
+            <i class="far fa-file-code"></i>&nbsp;Cobalt Pig Development, LLC
           </h1>
           <h2 class="subtitle">
             Building Useful Software
@@ -114,7 +122,7 @@
         <p class="is-size-4 has-text-light">Need something else? Use the <a href="#contact-us" class="has-text-primary">contact us</a> form bellow and we can help you achieve your software needs.</p>
       </div>
     </section>
-    <section class="section is-medium has-background-light">
+    <section class="section is-medium has-background-light" id="customers">
       <div class="container">
         <h1 class="title is-1 has-text-dark">Some of Our Customers</h1>
         <h1 class="title is-1 has-text-light">What We Build</h1>
@@ -159,7 +167,7 @@
     </section>
     <section class="section is-medium has-background-info" id="contact-us">
       <div class="container">
-        <h1 class="title is-1 has-text-dark">Contact Us</h1>
+        <h1 class="title is-1 has-text-light">Contact Us</h1>
         <div class="box">
           <form class="form"
             action="https://formspree.io/xqkdrygp"
@@ -196,5 +204,18 @@
         </div>
       </div>
     </footer>
+    <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      let button = document.querySelector('.burger');
+      button.onclick = function() {
+        var burger = document.querySelector('.burger')
+        var nav = document.querySelector('#navbarBasic')
+        burger.classList.toggle('is-active')
+        nav.classList.toggle('is-active')
+      }
+    </script>
   </body>
 </html>
