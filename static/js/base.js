@@ -8,6 +8,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+window.addEventListener("load", function() {
+  var f = document.getElementById('main-terminal');
+  setInterval(function() {
+      f.style.color = (f.style.color == 'transparent' ? '#0047ab' : 'transparent');
+  }, 1000);
+
+}, false);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
